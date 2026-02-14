@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Todosta Uniforms | Premium Uniforms & Corporate Branding in Machakos</title>
+  <meta name="description" content="Todosta Uniforms provides premium corporate and school uniforms, embroidery, screen printing, DTF and sublimation. Located next to KCB Machakos. Open 7:30am–7:00pm. WhatsApp 0704747274." />
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+  <link rel="canonical" href="https://todostauniforms.co.ke/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Todosta Uniforms | Premium Uniforms & Corporate Branding" />
+  <meta property="og:description" content="Premium corporate & school uniforms plus embroidery and printing. Next to KCB Machakos. WhatsApp 0704747274." />
+
+  <!-- Favicon (replace paths) -->
+  <link rel="icon" href="assets/favicon.png" />
+
+  <!-- Fonts (Modern sans-serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================
+       TODOSTA — INDEX.HTML (Single file)
+       - Premium header + hero integration
+       - H1-H6 weight <= 500
+       ========================= */
+
+    :root {
+      /* Core Brand */
+      --brand-navy-950: #0F172A;
+      --brand-navy-900: #111827;
+      --brand-navy-800: #1F2937;
+      --brand-navy-700: #334155;
+
+      /* Accent (Controlled Red) */
+      --accent-red-700: #B91C1C;
+      --accent-red-600: #DC2626;
+      --accent-red-100: #FEE2E2;
+
+      /* Neutrals */
+      --neutral-0:  #FFFFFF;
+      --neutral-50: #F8FAFC;
+      --neutral-100:#F1F5F9;
+      --neutral-200:#E2E8F0;
+      --neutral-300:#CBD5E1;
+      --neutral-600:#475569;
+      --neutral-700:#334155;
+      --neutral-900:#0B1220;
+
+      /* Footer */
+      --footer-bg: #0A0A0A;
+      --footer-surface: #111111;
+      --footer-border: rgba(255, 255, 255, 0.08);
+
+      /* Text */
+      --text-primary: var(--neutral-900);
+      --text-secondary: var(--neutral-600);
+      --text-inverse: rgba(255, 255, 255, 0.92);
+      --text-inverse-muted: rgba(255, 255, 255, 0.72);
+
+      /* Surfaces */
+      --bg: var(--neutral-50);
+      --surface: var(--neutral-0);
+      --surface-2: var(--neutral-100);
+
+      /* Hero / Header */
+      --hero-bg: radial-gradient(1200px 500px at 20% 20%, rgba(220,38,38,0.18), transparent 60%),
+                 radial-gradient(900px 450px at 75% 30%, rgba(56,189,248,0.10), transparent 60%),
+                 linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      --header-bg: rgba(15, 23, 42, 0.55);
+      --header-border: rgba(255, 255, 255, 0.10);
+      --glass-blur: blur(14px);
+
+      /* Shadows */
+      --shadow-sm: 0 6px 18px rgba(2, 6, 23, 0.06);
+      --shadow-md: 0 14px 30px rgba(2, 6, 23, 0.10);
+      --shadow-lg: 0 22px 50px rgba(2, 6, 23, 0.14);
+
+      /* Buttons */
+      --btn-primary-bg: var(--accent-red-700);
+      --btn-primary-hover: var(--accent-red-600);
+      --btn-primary-text: #FFFFFF;
+
+      --btn-secondary-bg: rgba(255, 255, 255, 0.10);
+      --btn-secondary-hover: rgba(255, 255, 255, 0.16);
+      --btn-secondary-text: var(--text-inverse);
+      --btn-secondary-border: rgba(255, 255, 255, 0.18);
+
+      /* Cards */
+      --card-border: rgba(15, 23, 42, 0.10);
+      --card-hover-border: rgba(185, 28, 28, 0.28);
+
+      /* Focus ring */
+      --ring: 0 0 0 4px rgba(220, 38, 38, 0.20);
+
+      /* Radius */
+      --r-xl: 20px;
+      --r-lg: 16px;
+      --r-md: 12px;
+
+      /* Layout */
+      --max: 1200px;
+      --pad: clamp(16px, 3vw, 28px);
+
+      /* Motion */
+      --ease: cubic-bezier(.2,.9,.2,1);
+      --dur: 650ms;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    }
+
+    /* Headings: keep weight <= 500 */
+    h1,h2,h3,h4,h5,h6 { margin: 0; font-weight: 500; letter-spacing: -0.02em; }
+    p { margin: 0; color: var(--text-secondary); }
+
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(var(--max), 100%); margin: 0 auto; padding: 0 var(--pad); }
+
+    /* ===== Header + Hero seamless integration ===== */
+    .hero-wrap {
+      position: relative;
+      background: var(--hero-bg);
+      color: var(--text-inverse);
+      overflow: hidden;
+    }
+
+    .noise {
+      pointer-events: none;
+      position: absolute;
+      inset: 0;
+      opacity: 0.12;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--header-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border-bottom: 1px solid var(--header-border);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      gap: 14px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 210px;
+    }
+
+    .logo {
+      width: 38px; height: 38px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(220,38,38,0.95), rgba(255,255,255,0.08));
+      box-shadow: 0 10px 28px rgba(220,38,38,0.25);
+      position: relative;
+    }
+    .logo::after{
+      content:"";
+      position:absolute; inset: 9px 11px 11px 9px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.24);
+      transform: rotate(6deg);
+    }
+
+    .brand-name { display: grid; line-height: 1.1; }
+    .brand-name strong { font-weight: 500; letter-spacing: -0.03em; }
+    .brand-name span { font-size: 12px; color: var(--text-inverse-muted); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .nav-links a {
+      font-size: 14px;
+      color: rgba(255,255,255,0.82);
+      padding: 10px 10px;
+      border-radius: 10px;
+      transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
+    }
+    .nav-links a:hover { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.95); }
+
+    .nav-actions { display:flex; align-items:center; gap: 10px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      font-weight: 500;
+      transition: transform var(--dur) var(--ease), background var(--dur) var(--ease), border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+      will-change: transform;
+      user-select: none;
+    }
+    .btn:focus { outline: none; box-shadow: var(--ring); }
+
+    .btn-primary {
+      background: var(--btn-primary-bg);
+      color: var(--btn-primary-text);
+      box-shadow: 0 18px 40px rgba(185,28,28,0.25);
+    }
+    .btn-primary:hover { background: var(--btn-primary-hover); transform: translateY(-1px); }
+
+    .btn-secondary {
+      background: var(--btn-secondary-bg);
+      color: var(--btn-secondary-text);
+      border-color: var(--btn-secondary-border);
+    }
+    .btn-secondary:hover { background: var(--btn-secondary-hover); transform: translateY(-1px); }
+
+    .hamburger {
+      display: none;
+      width: 44px; height: 44px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.92);
+      cursor:pointer;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 70px 0 60px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: clamp(22px, 4vw, 44px);
+      align-items: center;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.16);
+      color: rgba(255,255,255,0.86);
+      font-size: 13px;
+      width: fit-content;
+      animation: floatIn var(--dur) var(--ease) both;
+    }
+
+    .hero h1 {
+      margin-top: 16px;
+      font-size: clamp(34px, 4.2vw, 54px);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      animation: riseIn var(--dur) var(--ease) 120ms both;
+    }
+
+    .hero .lead {
+      margin-top: 16px;
+      font-size: clamp(15px, 1.35vw, 18px);
+      color: rgba(255,255,255,0.78);
+      max-width: 56ch;
+      animation: riseIn var(--dur) var(--ease) 220ms both;
+    }
+
+    .hero-ctas {
+      display:flex;
+      gap: 12px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+      animation: riseIn var(--dur) var(--ease) 320ms both;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 18px;
+      margin-top: 22px;
+      flex-wrap: wrap;
+      color: rgba(255,255,255,0.72);
+      font-size: 13px;
+      animation: riseIn var(--dur) var(--ease) 420ms both;
+    }
+    .hero-meta .meta {
+      display:flex; align-items:center; gap: 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+    }
+    .dot {
+      width: 10px; height: 10px; border-radius: 999px;
+      background: rgba(255,255,255,0.35);
+      box-shadow: 0 0 0 6px rgba(255,255,255,0.06);
+    }
+
+    /* Right side "premium preview" panel */
+    .hero-panel {
+      position: relative;
+      border-radius: var(--r-xl);
+      border: 1px solid rgba(255,255,255,0.14);
+      background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
+      box-shadow: 0 28px 70px rgba(0,0,0,0.35);
+      overflow: hidden;
+      min-height: 380px;
+      animation: panelIn var(--dur) var(--ease) 150ms both;
+    }
+    .panel-top {
+      display:flex; align-items:center; justify-content: space-between;
+      padding: 18px 18px 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+    .panel-top strong { font-weight: 500; font-size: 14px; color: rgba(255,255,255,0.9); }
+    .panel-top span { font-size: 12px; color: rgba(255,255,255,0.65); }
+
+    .mini-grid {
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 18px;
+    }
+
+    .mini-card{
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(0,0,0,0.10);
+      padding: 14px;
+      transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease), background var(--dur) var(--ease);
+    }
+    .mini-card:hover{
+      transform: translateY(-2px);
+      border-color: rgba(220,38,38,0.35);
+      background: rgba(0,0,0,0.16);
+    }
+    .mini-card h3 { font-size: 14px; color: rgba(255,255,255,0.92); }
+    .mini-card p { font-size: 12px; color: rgba(255,255,255,0.68); margin-top: 6px; }
+
+    .hero-panel .glow {
+      position:absolute;
+      width: 420px; height: 420px;
+      right: -180px; bottom: -190px;
+      background: radial-gradient(circle, rgba(220,38,38,0.35), transparent 60%);
+      filter: blur(6px);
+      pointer-events:none;
+    }
+
+    /* Sections */
+    section { padding: 70px 0; }
+    .section-head {
+      display:flex;
+      align-items:flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 26px;
+    }
+    .section-head h2 { font-size: clamp(24px, 2.6vw, 34px); }
+    .section-head p { max-width: 64ch; }
+
+    /* Premium cards */
+    .grid-3 {
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--card-border);
+      border-radius: var(--r-xl);
+      box-shadow: var(--shadow-sm);
+      padding: 18px;
+      transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease), border-color var(--dur) var(--ease);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before{
+      content:"";
+      position:absolute; inset: -2px;
+      background: radial-gradient(700px 220px at 20% 0%, rgba(220,38,38,0.10), transparent 55%);
+      opacity: 0;
+      transition: opacity var(--dur) var(--ease);
+    }
+    .card:hover{
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--card-hover-border);
+    }
+    .card:hover::before{ opacity: 1; }
+
+    .icon {
+      width: 44px; height: 44px;
+      border-radius: 14px;
+      display:grid; place-items:center;
+      background: rgba(185,28,28,0.10);
+      border: 1px solid rgba(185,28,28,0.22);
+      color: var(--accent-red-700);
+      font-weight: 500;
+    }
+
+    .card h3 { font-size: 18px; margin-top: 12px; }
+    .card p { margin-top: 8px; }
+
+    .badge {
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--neutral-100);
+      border: 1px solid var(--neutral-200);
+      color: var(--neutral-700);
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    /* CTA band */
+    .cta-band {
+      padding: 70px 0;
+      background: linear-gradient(180deg, var(--neutral-50), var(--neutral-100));
+    }
+    .cta-box{
+      border-radius: 26px;
+      border: 1px solid rgba(15,23,42,0.10);
+      background: linear-gradient(135deg, rgba(15,23,42,0.06), rgba(220,38,38,0.05));
+      box-shadow: var(--shadow-sm);
+      padding: clamp(18px, 3vw, 28px);
+      display:grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+      align-items:center;
+    }
+    .cta-box h2 { font-size: clamp(22px, 2.4vw, 30px); }
+    .cta-box p { margin-top: 10px; }
+
+    /* Contact */
+    .contact-grid{
+      display:grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 18px;
+      align-items: start;
+    }
+    .contact-card{
+      border-radius: var(--r-xl);
+      background: var(--surface);
+      border: 1px solid rgba(15,23,42,0.10);
+      box-shadow: var(--shadow-sm);
+      padding: 18px;
+    }
+    .list { margin-top: 14px; display:grid; gap: 10px; }
+    .list .row{
+      display:flex; justify-content: space-between; gap: 10px;
+      padding: 12px 12px;
+      border-radius: 14px;
+      background: var(--surface-2);
+      border: 1px solid rgba(15,23,42,0.06);
+    }
+    .label { font-size: 13px; color: var(--neutral-700); font-weight: 500; }
+    .value { font-size: 13px; color: var(--neutral-900); font-weight: 500; }
+
+    .map{
+      border-radius: var(--r-xl);
+      overflow:hidden;
+      border: 1px solid rgba(15,23,42,0.10);
+      box-shadow: var(--shadow-sm);
+      min-height: 380px;
+      background: #e5e7eb;
+    }
+    .map iframe{ width: 100%; height: 100%; border: 0; }
+
+    /* Footer (premium black themed) */
+    footer{
+      background: var(--footer-bg);
+      color: var(--text-inverse);
+      border-top: 1px solid var(--footer-border);
+    }
+    .footer-top{
+      padding: 56px 0 26px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns: 1.3fr 0.9fr 0.9fr;
+      gap: 18px;
+    }
+    .footer-surface{
+      background: var(--footer-surface);
+      border: 1px solid var(--footer-border);
+      border-radius: 22px;
+      padding: 18px;
+    }
+    .footer-surface h4{ font-size: 16px; }
+    .footer-surface p{ color: var(--text-inverse-muted); margin-top: 8px; }
+    .footer-links{
+      display:grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .footer-links a{
+      color: rgba(255,255,255,0.78);
+      font-size: 14px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
+      transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease), transform var(--dur) var(--ease);
+    }
+    .footer-links a:hover{
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(220,38,38,0.32);
+      transform: translateY(-1px);
+    }
+    .footer-bottom{
+      padding: 18px 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.65);
+      font-size: 13px;
+    }
+    .footer-bottom .row{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* WhatsApp floating button */
+    .whatsapp-float{
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 60;
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.92);
+      color: var(--neutral-900);
+      border: 1px solid rgba(15,23,42,0.14);
+      box-shadow: 0 18px 50px rgba(2,6,23,0.22);
+      transition: transform var(--dur) var(--ease);
+      font-weight: 500;
+    }
+    .whatsapp-float:hover{ transform: translateY(-2px); }
+    .wa-dot{
+      width: 10px; height: 10px; border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 6px rgba(34,197,94,0.15);
+    }
+
+    /* Animations (premium, restrained) */
+    @keyframes riseIn{
+      from { opacity: 0; transform: translateY(10px); filter: blur(3px); }
+      to   { opacity: 1; transform: translateY(0); filter: blur(0); }
+    }
+    @keyframes panelIn{
+      from { opacity: 0; transform: translateY(14px) scale(0.985); filter: blur(4px); }
+      to   { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    }
+    @keyframes floatIn{
+      from { opacity:0; transform: translateY(8px); }
+      to { opacity:1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .hero-panel{ min-height: 320px; }
+      .grid-3{ grid-template-columns: 1fr; }
+      .cta-box{ grid-template-columns: 1fr; }
+      .contact-grid{ grid-template-columns: 1fr; }
+      .nav-links{ display:none; }
+      .hamburger{ display:inline-grid; place-items:center; }
+      .brand { min-width: auto; }
+    }
+
+    /* Mobile menu (simple) */
+    .mobile-menu{
+      display:none;
+      border-top: 1px solid rgba(255,255,255,0.10);
+      background: rgba(15,23,42,0.86);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+    }
+    .mobile-menu.open{ display:block; }
+    .mobile-menu .container{ padding-top: 10px; padding-bottom: 14px; }
+    .mobile-menu a{
+      display:block;
+      padding: 12px 12px;
+      border-radius: 14px;
+      color: rgba(255,255,255,0.88);
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04);
+      margin: 10px 0;
+    }
+    .mobile-menu a:hover{ border-color: rgba(220,38,38,0.35); }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER (integrates with hero background) -->
+  <div class="hero-wrap" id="top">
+    <div class="noise" aria-hidden="true"></div>
+
+    <header>
+      <div class="container">
+        <nav class="nav" aria-label="Primary">
+          <a class="brand" href="#top" aria-label="Todosta Uniforms Home">
+            <div class="logo" aria-hidden="true"></div>
+            <div class="brand-name">
+              <strong>Todosta Uniforms</strong>
+              <span>Uniforms & Corporate Branding • Machakos</span>
+            </div>
+          </a>
+
+          <div class="nav-links" role="navigation" aria-label="Site Links">
+            <a href="#services">Services</a>
+            <a href="#process">Process</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+          </div>
+
+          <div class="nav-actions">
+            <a class="btn btn-secondary" href="https://wa.me/254704747274" target="_blank" rel="noopener">
+              WhatsApp
+            </a>
+            <a class="btn btn-primary" href="#contact">
+              Request Quote
+            </a>
+            <button class="hamburger" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+              ☰
+            </button>
+          </div>
+        </nav>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <div class="container">
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" aria-label="Hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="pill">
+              <span class="dot" aria-hidden="true"></span>
+              Next to KCB Machakos • Open 7:30am–7:00pm
+            </div>
+
+            <h1>Premium Uniforms & Branding Solutions for Institutions and Individuals.</h1>
+
+            <p class="lead">
+              We produce high-quality corporate and school uniforms, custom t-shirts, embroidery, screen printing,
+              DTF and sublimation — with a professional process, dependable turnaround and nationwide delivery.
+            </p>
+
+            <div class="hero-ctas">
+              <a class="btn btn-primary" href="#contact">Request a Quote</a>
+              <a class="btn btn-secondary" href="#services">Explore Services</a>
+            </div>
+
+            <div class="hero-meta" aria-label="Quick Info">
+              <div class="meta"><span class="dot" aria-hidden="true"></span> WhatsApp: 0704 747 274</div>
+              <div class="meta"><span class="dot" aria-hidden="true"></span> Location: Next to KCB Machakos</div>
+              <div class="meta"><span class="dot" aria-hidden="true"></span> Quality-first production</div>
+            </div>
+          </div>
+
+          <div class="hero-panel" aria-label="Preview Panel">
+            <div class="panel-top">
+              <div>
+                <strong>What we deliver</strong><br>
+                <span>From bulk orders to custom pieces</span>
+              </div>
+              <span class="badge">Premium Finish</span>
+            </div>
+
+            <div class="mini-grid">
+              <div class="mini-card">
+                <h3>Corporate Uniforms</h3>
+                <p>Executive wear, reception, security and branded staff apparel.</p>
+              </div>
+              <div class="mini-card">
+                <h3>School Uniforms</h3>
+                <p>Durable, comfortable and consistent across all size ranges.</p>
+              </div>
+              <div class="mini-card">
+                <h3>Embroidery</h3>
+                <p>Clean stitching for logos, names, badges and crests.</p>
+              </div>
+              <div class="mini-card">
+                <h3>DTF / Sublimation</h3>
+                <p>High-resolution prints for modern branding needs.</p>
+              </div>
+            </div>
+
+            <div class="glow" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Services crafted for quality, built for scale.</h2>
+          <p>Whether you’re outfitting an institution or ordering a few custom pieces, we handle every project with precision and care.</p>
+        </div>
+        <span class="badge">Professional • Reliable • Premium</span>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <div class="icon">🏢</div>
+          <h3>Corporate Uniforms</h3>
+          <p>Professional uniforms for offices, security teams, reception, and branded staff apparel that reflects your brand.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">🎓</div>
+          <h3>School Uniforms</h3>
+          <p>Consistent sizing, durable stitching and comfortable fabrics — ideal for long-term supply and institutional orders.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">👕</div>
+          <h3>T-Shirts & Polo Shirts</h3>
+          <p>Clean, modern apparel for events, promotions, teams and organizations — from small runs to bulk supply.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">🧵</div>
+          <h3>Embroidery</h3>
+          <p>Premium stitching for logos, names, crests and badges — consistent finish across large quantities.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">🖨️</div>
+          <h3>Screen Printing</h3>
+          <p>Strong, long-lasting prints for uniforms and promotional apparel — optimized for bulk production.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">✨</div>
+          <h3>DTF & Sublimation</h3>
+          <p>High-resolution, full-color output for modern branding — great for detailed designs and vibrant finishes.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" style="background: var(--neutral-100);">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>A process that institutions trust.</h2>
+          <p>Clear steps, quality control and dependable delivery — built to support both bulk and small custom orders.</p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <div class="icon">1</div>
+          <h3>Consultation</h3>
+          <p>We understand your needs: category, quantities, branding method and timelines.</p>
+        </article>
+        <article class="card">
+          <div class="icon">2</div>
+          <h3>Fabric & Branding</h3>
+          <p>Select fabric options and finalize embroidery, screen print, DTF or sublimation details.</p>
+        </article>
+        <article class="card">
+          <div class="icon">3</div>
+          <h3>Production & QC</h3>
+          <p>Production with strict quality checks for sizing, stitching and branding consistency.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO (placeholder) -->
+  <section id="portfolio">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Portfolio</h2>
+          <p>Add clean photos of uniforms, embroidery close-ups and completed orders to increase trust instantly.</p>
+        </div>
+        <span class="badge">Add images later</span>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <div class="icon">📸</div>
+          <h3>Corporate Wear</h3>
+          <p>Replace with real project images (WebP) for premium credibility.</p>
+        </article>
+        <article class="card">
+          <div class="icon">📸</div>
+          <h3>School Uniforms</h3>
+          <p>Show stitching quality, fabric texture and uniform consistency.</p>
+        </article>
+        <article class="card">
+          <div class="icon">📸</div>
+          <h3>Branding Close-ups</h3>
+          <p>Embroidery, DTF and screen prints — zoomed for detail.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band" aria-label="Call to action">
+    <div class="container">
+      <div class="cta-box">
+        <div>
+          <h2>Need uniforms or branded apparel done right?</h2>
+          <p>
+            From institutions and corporates to individuals — we deliver a premium finish, dependable timelines and clear communication.
+          </p>
+        </div>
+        <div style="display:flex; gap: 12px; justify-content:flex-end; flex-wrap: wrap;">
+          <a class="btn btn-primary" href="#contact">Request Quote</a>
+          <a class="btn btn-secondary" href="https://wa.me/254704747274" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT + MAP -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Visit or contact Todosta Uniforms.</h2>
+          <p>We’re located next to KCB Machakos. Open daily from 7:30am to 7:00pm.</p>
+        </div>
+        <span class="badge">WhatsApp: 0704 747 274</span>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Quick Details</h3>
+          <div class="list">
+            <div class="row">
+              <div class="label">Location</div>
+              <div class="value">Next to KCB Machakos</div>
+            </div>
+            <div class="row">
+              <div class="label">Business Hours</div>
+              <div class="value">7:30am – 7:00pm</div>
+            </div>
+            <div class="row">
+              <div class="label">WhatsApp</div>
+              <div class="value"><a href="https://wa.me/254704747274" target="_blank" rel="noopener">0704 747 274</a></div>
+            </div>
+            <div class="row">
+              <div class="label">Call</div>
+              <div class="value"><a href="tel:+254704747274">0704 747 274</a></div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap: 12px; margin-top: 16px; flex-wrap: wrap;">
+            <a class="btn btn-primary" href="https://wa.me/254704747274" target="_blank" rel="noopener">Chat on WhatsApp</a>
+            <a class="btn btn-secondary" href="tel:+254704747274">Call Now</a>
+          </div>
+
+          <p style="margin-top: 14px; font-size: 13px;">
+            Tip: For fastest service, send your logo/artwork and quantity on WhatsApp for a quick quotation.
+          </p>
+        </div>
+
+        <div class="map" aria-label="Map: KCB Machakos">
+          <!-- Replace the src below with the exact embed link you get from Google Maps:
+               Search "KCB Machakos" → Share → Embed a map → Copy HTML -->
+          <iframe
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=KCB%20Machakos&output=embed"
+            title="KCB Machakos Map">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-top">
+      <div class="footer-grid">
+        <div class="footer-surface">
+          <div class="brand" style="min-width:auto;">
+            <div class="logo" aria-hidden="true"></div>
+            <div class="brand-name">
+              <strong>Todosta Uniforms</strong>
+              <span>Uniforms & Corporate Branding • Machakos</span>
+            </div>
+          </div>
+          <p style="margin-top: 12px;">
+            Premium uniforms and branding solutions for institutions, businesses and individuals — with quality-first production and dependable delivery.
+          </p>
+        </div>
+
+        <div class="footer-surface">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="#services">Services</a>
+            <a href="#process">Process</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer-surface">
+          <h4>Contact</h4>
+          <div class="footer-links">
+            <a href="https://wa.me/254704747274" target="_blank" rel="noopener">WhatsApp: 0704 747 274</a>
+            <a href="tel:+254704747274">Call: 0704 747 274</a>
+            <a href="#contact">Next to KCB Machakos</a>
+            <a href="#contact">Open: 7:30am – 7:00pm</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div class="row">
+        <span>© <span id="year"></span> Todosta Uniforms. All rights reserved.</span>
+        <span>Designed for premium performance.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp floating button -->
+  <a class="whatsapp-float" href="https://wa.me/254704747274" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <span class="wa-dot" aria-hidden="true"></span> WhatsApp
+  </a>
+
+  <script>
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn?.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    // Close mobile menu on link click
+    mobileMenu?.querySelectorAll("a").forEach(a => {
+      a.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+      });
+    });
+  </script>
+</body>
+</html>
